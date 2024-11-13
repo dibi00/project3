@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Mark city</title>
+</head>
+<body>
+    <button id="topButton" title="Go to top">▲</button>
+
+    <script>
+        // 스크롤이 20px 이상 내려가면 버튼이 보이도록 설정
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    var button = document.getElementById("topButton");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+}
+
+// 버튼 클릭 시 페이지 맨 위로 스크롤
+document.getElementById("topButton").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+    </script>
+
+    <div class="main">
+        <img class="main_background" src="img/background1.png" alt="">
+        <img class="logo" src="img/logo.png" alt="">
+        <p>안드로이드가 세상을 지배하는 근미래, 마크시티<br>
+            천재 박사 소니는 안드로이드에 의해 제거된 인간들의 신체를 개조해 그들에게 대항할 수 있는 언데드돌을 만들게 되는데..!
+        </p>
+        <ul class="chara_list">
+            <li><a href="#wanted1"><img src="img/dot1.png" alt=""></a></li>
+            <li><a href="#wanted2"><img src="img/dot2.png" alt=""></a></li>
+            <li><a href="#wanted3"><img src="img/dot3.png" alt=""></a></li>
+            <li><a href="#wanted4"><img src="img/dot4.png" alt=""></a></li>
+            <li><a href="#particles-container"><img src="img/dot5.png" alt=""></a></li>
+            <li><a href="#wanted5"><img src="img/dot6.png" alt=""></a></li>
+            <li><a href="#wanted6"><img src="img/dot7.png" alt=""></a></li>
+        </ul>
+    </div>
+
+    <div id="sub">
+        <img class="sub_background" src="img/background2.png" alt=""> 
+            <div class="wanted_list">
+                <h1>▶CHARACTERS</h1>
+                <div id="wanted">
+                    <div id="wanted1">
+                        <img class="wanted_img" src="img/wanted_1.png" alt="">
+                        <div class="wanted_info">
+                            <img src="img/comment1.png" alt="">
+                            <p>인간들의 희망이라 불릴정도로 <br>
+                                안드로이드와의 전쟁에 적극적이지만<br>
+                                실상은 단순한 전쟁광일 뿐,<br>
+                                박사의 말도 듣지 않고 제멋대로 행동하는<br>
+                                마이페이스적인 성격을 가지고 있다.
+                            </p>
+                            <h4>WEAPON - 권총, 폭탄</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wanted">
+                    <div id="wanted2">
+                        <div class="wanted_info">
+                            <img src="img/comment2.png" alt="">
+                            <p>소니가 가장 첫 번째로 만들어 낸 언데드돌<br>
+                                소니의 조수로써 잡일을 담당 중.<br>
+                                스타와 정반대인 얌전한 성격으로<br>
+                                말수도 적고 가장 상식인이다.
+                            </p>
+                            <h4>WEAPON - 손도끼</h4>
+                            <img src="img/weapon2.png" alt="">
+                        </div>
+                        <img class="wanted_img" src="img/wanted_2.png" alt="">
+                    </div>
+                </div>
+
+                <div id="wanted">
+                    <div id="wanted3">
+                        <img class="wanted_img" src="img/wanted_3.png" alt="">
+                        <div class="wanted_info">
+                            <img src="img/comment3.png" alt="">
+                            <p>안드로이드의 방해가 된다면<br>
+                                한 치의 망설임없이 숙청하는 무자비한 성격.<br>
+                                스타를 극도로 증오하고 있으며<br>
+                                숙명의 라이벌 관계다.<br>
+                                소니를 그리워한다는 소문이 있는데...
+                            </p>
+                            <h4>WEAPON - 테이저건, 톤파</h4>
+                            <img src="img/weapon3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wanted">
+                    <div id="wanted4">
+                        <div class="wanted_info">
+                            <img src="img/comment4.png" alt="">
+                            <p>세계 제일의 천재 박사<br>
+                                안드로이드에게 대항할 언데드돌 제작 중<br>
+                                이 사실은 정부의 높은 극 소수의 인간만<br>
+                                알지만, 사실 안드로이드가 활개치는 세상을<br>
+                                열게 된 장본인이 바로 소니다.<br>
+                                지루한 것을 싫어해 자극을 쫓는 괴짜.<br>
+                                통제 불가한 스타를 재밌어한다.
+                            </p>
+                            <h4>WEAPON - 스스로 싸우지 않음</h4>
+                            <img src="img/weapon4.png" alt="">
+                        </div>
+                        <img class="wanted_img" src="img/wanted_4.png" alt="">
+                    </div>
+                </div>
+
+                <div id="wanted">
+                    <div id="wanted5">
+                        <img class="wanted_img" src="img/wanted_5.png" alt="">
+                        <div class="wanted_info">
+                            <img src="img/comment5.png" alt="">
+                            <p>오래 전, 소니의 심심풀이로 인해<br>
+                                늑대인간으로 개조됐지만 본인은 만족 중.<br>
+                                얼마 남지 않은 야생에서 생활한다.<br>
+                                최근 인간들과 안드로이드 전쟁이 재밌어보여<br>
+                                도시에 자주 출몰하고 있음.
+                            </p>
+                            <h4>WEAPON - 손톱, 이빨</h4>
+                            <img src="img/weapon5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wanted">
+                    <div id="wanted6">
+                    <div class="wanted_info">
+                        <img src="img/comment6.png" alt="">
+                        <p>장의사 겸 시체회수자<br>
+                            항상 냉동고에서 생활 중이기 때문에<br>
+                            피부가 파랗고 얼음장 같다.<br>
+                            소니에게 불법으로 회수된 시체들을 판매 중<br>
+                            생김새 때문에 주위에서 언데드돌이라는<br>
+                            오해를 사고 있지만 엄연한 인간이다.
+                        </p>
+                        <h4>WEAPON - 식칼</h4>
+                        <img src="img/weapon6.png" alt="">
+                    </div>
+                    <img class="wanted_img" src="img/wanted_6.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </img>
+    </div>
+
+    <div id="particles-container"></div>
+
+    <script>
+        document.querySelector('.dot1').addEventListener('click', function() {
+    document.querySelector('#wanted1').scrollIntoView({ behavior: 'smooth' });
+});
+
+    </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // 모든 #wanted1, #wanted2, #wanted3 등의 wanted 요소 안의 자식들에 대해 애니메이션 적용
+    const elements = document.querySelectorAll('#wanted .wanted_img, #wanted .wanted_info, #wanted .wanted_info p, #wanted .wanted_info h4');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {  // 요소가 화면에 들어오면
+                entry.target.classList.add('visible'); // visible 클래스를 추가
+            } else {
+                entry.target.classList.remove('visible'); // 요소가 화면에서 사라지면 visible 클래스를 제거
+            }
+        });
+    }, { threshold: 0.5 }); // 50% 이상 화면에 보일 때 애니메이션 시작
+
+    elements.forEach(element => {
+        observer.observe(element); // 각 요소를 관찰
+    });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const particlesContainer = document.getElementById('particles-container');
+
+    // 랜덤 위치와 속도로 원 생성
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // 랜덤 위치 설정 (화면 너비 기준)
+        particle.style.left = Math.random() * 100 + 'vw'; // 0% ~ 100% 가로 위치
+        particle.style.animationDuration = Math.random() * 2 + 3 + 's'; // 애니메이션 속도 (3초~5초 사이)
+
+        particlesContainer.appendChild(particle);
+
+        // 애니메이션 종료 후 원 제거
+        setTimeout(() => {
+            particle.remove();
+        }, 3000); // 3초 후 원 삭제
+    }
+
+    // 일정 간격으로 원 생성 (기존 300ms에서 100ms로 변경)
+    setInterval(createParticle, 100); // 0.1초 간격으로 원 생성
+});
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const charaListItems = document.querySelectorAll('.chara_list li');
+
+    charaListItems.forEach((item, index) => {
+        item.style.setProperty('--delay', `${index * 0.2}s`); // 순차적으로 나타나는 애니메이션 딜레이
+        item.style.setProperty('--delay2', `${index * 0.2 + 0.5}s`); // 둥실둥실 애니메이션이 시작되는 딜레이
+    });
+});
+
+</script>
+</body>
+</html>

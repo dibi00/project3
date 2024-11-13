@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'DungGeunMo';
+}
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 99;
+    font-size: 30px;
+    background-color: #0f0f3d; /* 어두운 배경 */
+    color: #00eaff; /* 네온 블루 텍스트 */
+    border: 2px solid #00eaff; /* 네온 블루 테두리 */
+    padding: 20px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    animation: glow 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+}
+
+#topButton:hover {
+    background-color: #1a1a4f; /* 호버 시 색상 */
+    box-shadow: 0 0 15px #ff0eff, 0 0 30px #ff0eff; /* 핑크빛 네온 효과 */
+    color: #ff0eff; /* 호버 시 핑크 네온 텍스트 */
+    border: 2px solid #ff0eff;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff;
+    }
+    to {
+        box-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+    }
+}
+
+
+
+.main {
+    border: 6px solid rgb(255, 47, 144);
+    position: relative;
+}
+
+.main::before {
+    content: ""; /* 가상 요소를 빈 내용으로 생성 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98.8vw;
+    height: 100%;
+    background-color: black; /* 검정색 배경 */
+    opacity: 0.7; /* 불투명도 50% */
+    z-index: 0; /* 이미지 위로 오지 않도록 설정 */
+}
+
+.main_background {
+    width: 98.8vw; /* 필요에 따라 조정 */
+    display: block;
+    z-index: 1; /* 검정 배경 뒤로 위치시킴 */
+}
+
+/* 초기 상태에서는 logo와 p가 보이지 않음 */
+.logo, .main p {
+    opacity: 0;
+    transform: translateY(50px) translateX(-50%); /* 아래로 내려가고 가운데 정렬 */
+    animation: slideUp 1s ease-out forwards;
+    position: absolute;
+    left: 50%; /* 화면 가로 가운데 정렬 */
+}
+
+/* 애니메이션 */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) translateX(-50%); /* 아래에서 올라오며 시작 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%); /* 위로 올라오며 중앙 정렬 */
+    }
+}
+
+/* 로고 스타일 */
+.logo {
+    width: 35vw;
+    z-index: 2;
+    top: 25%; /* 로고의 세로 위치 설정 */
+    animation-delay: 0.5s; /* 로고가 조금 늦게 등장하도록 설정 */
+}
+
+/* 텍스트 스타일 */
+.main p {
+    color: #ffb3ff;
+    z-index: 3;
+    line-height: 30px;
+    top: 45%; /* 텍스트의 세로 위치 설정 */
+    text-align: center;
+    font-size: 1em;
+    animation-delay: 1s; /* 텍스트가 로고 뒤에 나타나도록 설정 */
+}
+
+
+.chara_list {
+    /* border: 1px solid rgb(255, 255, 255); */
+    height: 300px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between; /* 아이템 사이 간격 */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 30%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.chara_list li {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards, float 3s ease-in-out infinite;
+    animation-delay: var(--delay), var(--delay2); /* 두 번째 애니메이션 딜레이 설정 */
+}
+
+.chara_list li:active {
+    animation: verticalSquashAndJump 4.2s ease-out; /* 클릭 시 애니메이션 지속 시간 증가 */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 위로 이동 */
+    }
+    100% {
+        transform: translateY(0); /* 원래 위치로 돌아옴 */
+    }
+}
+
+@keyframes verticalSquashAndJump {
+    0% {
+        transform: scaleY(1);
+    }
+    30% {
+        transform: scaleY(0.6); /* 세로로 찌부 */
+    }
+    50% {
+        transform: scaleY(1.2); /* 약간 늘어남 */
+    }
+    70% {
+        transform: translateY(-50px) scaleY(1); /* 위로 크게 점프 */
+    }
+    100% {
+        transform: translateY(0) scaleY(1); /* 원래 위치로 돌아옴 */
+    }
+}
+
+.chara_list img {
+    width: 13vw;  
+}
+
+.sub {
+    position: relative;
+}
+
+.sub_background {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden; 
+}
+
+
+.wanted_list{
+    /* border: 1px solid rgb(255, 0, 0); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    margin-top: -400px;
+    transform: translate(0%, 25%);
+}
+
+.wanted_list h1{
+    text-align: center;
+    font-size: 8em;
+    color: rgb(255, 47, 144);
+    /* border: 1px solid rgb(255, 255, 255); */
+}
+
+#wanted{
+    margin-top: 100px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wanted img{
+    width: 30vw;
+}
+
+
+#wanted1, #wanted3, #wanted5{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wanted_img, .wanted_info, .wanted_info p, .wanted_info h4 {
+    opacity: 0;
+    transform: translateY(50px); /* 아래에서 올라오는 효과 */
+    transition: opacity 1s ease, transform 1s ease; /* 부드러운 애니메이션 */
+    position: relative;
+}
+
+/* visible 클래스를 추가하면 애니메이션이 실행됨 */
+.wanted_img.visible, .wanted_info.visible, .wanted_info p.visible, .wanted_info h4.visible {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+.wanted_info {
+    flex-grow: 1;
+}
+
+.wanted_info img {
+    width: 20px;
+}
+
+
+
+#wanted2, #wanted4, #wanted6{
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+}
+
+
+
+
+
+.wanted_info p{
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 2em;
+    line-height: 6vh;
+}
+
+h4{
+    color: rgb(255, 47, 144);
+    margin-top: 16px;
+    font-size: 2.5em;
+}
+
+
+#particles-container {
+    position: fixed; /* 화면의 하단에 고정 */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* 원들이 올라가는 공간 */
+    pointer-events: none; /* 클릭 이벤트 차단 */
+    z-index: 999; /* 다른 요소 위에 표시 */
+    overflow: hidden; /* 화면 밖으로 나가는 원을 숨김 */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반짝이는 흰색 원 */
+    border-radius: 50%;
+    animation: rise 3s forwards, fadeOut 3s forwards; /* 올라가고 사라지는 애니메이션 */
+}
+
+@keyframes rise {
+    from {
+        bottom: 0;
+        transform: scale(0.5);
+    }
+    to {
+        bottom: 100%;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
